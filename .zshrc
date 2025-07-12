@@ -1,6 +1,10 @@
 # Set the prompt
 setopt prompt_subst
-PROMPT='%F{111}[%D{%H:%M:%S}]%f %F{135}%n%f@%F{166}%m%f %F{118}%~%f %F{%(?.118.166)}%#%f '
+if [[ -n $SSH_TTY ]]; then
+  PROMPT='%F{111}[%D{%H:%M:%S}%f %F{166}SSH%f%F{111}]%f %F{135}%n%f@%F{166}%m%f %F{118}%~%f %F{%(?.118.166)}%#%f '
+else
+  PROMPT='%F{111}[%D{%H:%M:%S}]%f %F{135}%n%f@%F{166}%m%f %F{118}%~%f %F{%(?.118.166)}%#%f '
+fi
 TMOUT=1
 TRAPALRM() {
   zle reset-prompt
