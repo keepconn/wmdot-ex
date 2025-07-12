@@ -1,0 +1,3 @@
+[submodule ".local/share/wmdot"]
+	path = .local/share/wmdot
+	url = https://github.com/keepconn/wmdot.git
