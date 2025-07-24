@@ -1,6 +1,6 @@
 [submodule ".local/share/wmdot"]
 	path = .local/share/wmdot
-	url = https://github.com/keepconn/wmdot.git
+	url = https://github.com/wmil/wmdot.git
 [submodule ".local/share/zsh-autosuggestions"]
 	path = .local/share/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
