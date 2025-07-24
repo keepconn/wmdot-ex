@@ -40,3 +40,6 @@ nnoremap <leader>n :set number relativenumber!<CR>
 " Performance tweaks
 set lazyredraw
 set synmaxcol=200
+
+" IM auto-switching
+set noimdisable

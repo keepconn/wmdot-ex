@@ -21,7 +21,7 @@ fpath=("$HOME/.local/share/zsh-completions/src" $fpath)
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # Case-insensitive and substring completion
 
 # Enable vi mode
 bindkey -v
