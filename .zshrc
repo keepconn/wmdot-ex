@@ -43,6 +43,9 @@ bindkey -M vicmd '^[[B' history-substring-search-down
 bindkey -M viins '^[[A' history-substring-search-up
 bindkey -M viins '^[[B' history-substring-search-down
 
+# Enable key bindings for history search
+bindkey '^R' history-incremental-search-backward
+
 # Aliases
 alias ls='ls -G'   # Colorized ls output (macOS/BSD)
 alias ll='ls -lh'  # Long listing with human-readable sizes
@@ -55,8 +58,5 @@ alias ...='cd ../..'
 export EDITOR='vi'
 
 # Add custom paths
-export PATH="$HOME/.local/share/wmdot:$PATH"
-
-# Enable key bindings for history search
-bindkey '^R' history-incremental-search-backward
+source "$HOME/.local/etc/profile.d/path.sh"
 

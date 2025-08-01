@@ -1,0 +1,14 @@
+#!/bin/sh
+
+install_brew () {
+    if [ -f "$HOME/.brew" ] || [ -d "$HOME/.brew" ]; then
+        echo "Found $HOME/.brew"
+        return 1
+    fi
+
+    git clone https://github.com/Homebrew/brew "$HOME/.brew/Homebrew"
+    mkdir -p "$HOME/.brew/bin"
+    cd "$HOME/.brew/bin" && ln -s ../Homebrew/bin/brew && cd -
+}
+
+install_brew
