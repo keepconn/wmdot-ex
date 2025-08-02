@@ -5,10 +5,6 @@ if [[ -n $SSH_TTY ]]; then
 else
   PROMPT='%F{111}[%D{%H:%M:%S}]%f %F{135}%n%f@%F{166}%m%f %F{118}%~%f %F{%(?.118.166)}%#%f '
 fi
-TMOUT=1
-TRAPALRM() {
-  zle reset-prompt
-}
 
 # Enable history
 HISTSIZE=1000
@@ -44,7 +40,16 @@ bindkey -M viins '^[[A' history-substring-search-up
 bindkey -M viins '^[[B' history-substring-search-down
 
 # Enable key bindings for history search
-bindkey '^R' history-incremental-search-backward
+bindkey -M viins '^R' history-incremental-search-backward
+bindkey -M vicmd '^R' history-incremental-search-backward
+
+# Enable key bindings for reset prompt
+zle-reset-prompt() {
+  zle reset-prompt
+}
+zle -N zle-reset-prompt
+bindkey -M viins '^T' zle-reset-prompt
+bindkey -M vicmd '^T' zle-reset-prompt
 
 # Set editor
 export EDITOR='vi'
