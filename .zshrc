@@ -46,17 +46,10 @@ bindkey -M viins '^[[B' history-substring-search-down
 # Enable key bindings for history search
 bindkey '^R' history-incremental-search-backward
 
-# Aliases
-alias ls='ls -G'   # Colorized ls output (macOS/BSD)
-alias ll='ls -lh'  # Long listing with human-readable sizes
-alias la='ls -lha' # Show all files, including hidden
-alias grep='grep --color=auto'
-alias ..='cd ..'
-alias ...='cd ../..'
-
 # Set editor
 export EDITOR='vi'
 
-# Add custom paths
-source "$HOME/.local/etc/profile.d/path.sh"
-
+# Optional scripts
+source "$HOME/.local/etc/wmdot/aliases.sh"
+source "$HOME/.local/etc/wmdot/add_path.sh"
+source "$HOME/.local/etc/wmdot/load_nvm.sh"

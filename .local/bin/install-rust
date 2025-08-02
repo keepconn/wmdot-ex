@@ -1,0 +1,12 @@
+#!/bin/sh
+
+install_rustup () {
+    if [ -f "$HOME/.rustup" ] || [ -d "$HOME/.rustup" ] || [ -f "$HOME/.cargo" ] || [ -d "$HOME/.cargo" ]; then
+        echo "Found $HOME/{.rustup, .cargo}, exit."
+        return 1
+    fi
+
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path
+}
+
+install_rustup
