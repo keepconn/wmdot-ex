@@ -16,8 +16,11 @@ setopt appendhistory sharehistory histignorealldups
 fpath=("$HOME/.local/share/zsh-completions/src" $fpath)
 autoload -Uz compinit
 compinit
+zmodload zsh/complist
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # Case-insensitive and substring completion
+bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete     # Shift + Tab
+bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Enable vi mode
 bindkey -v
